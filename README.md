@@ -36,7 +36,7 @@ planning, and entertainment.
 
 ```bash
 git clone <your-repository-url>
-cd personal-site
+cd <your-repository-folder>
 npm ci
 npm run dev
 ```
@@ -49,6 +49,7 @@ The development server prints the local URL after startup.
 | --- | --- |
 | `npm run dev` | Start the local development server |
 | `npm run build` | Create the production build in `dist/` |
+| `npm run build:vercel` | Validate the standard Next.js build used by Vercel |
 | `npm run start` | Run the production build locally |
 | `npm run lint` | Check source quality |
 | `npm test` | Build and run rendered-page regression tests |
@@ -95,9 +96,15 @@ weekly and proposes reviewable pull requests.
 
 ## Deployment
 
-`npm run build` generates a Cloudflare Workers-compatible application in
-`dist/`. The current production site is hosted with OpenAI Sites; the source can
-also be connected to a compatible Cloudflare deployment workflow.
+The repository supports two deployment targets without changing the website:
+
+- OpenAI Sites/Cloudflare uses `npm run build` and produces `dist/`.
+- Vercel uses the committed `vercel.json`, runs `npm run build:vercel`, and
+  produces the standard Next.js `.next/` output.
+
+For Vercel, import the GitHub repository, keep the framework preset as
+**Next.js**, leave the install and output-directory settings at their defaults,
+and deploy. Node.js is pinned to the supported 22.x line for predictable builds.
 
 ## License
 
