@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Audible Market Viability — Chengtian Wang",
+  title: "Audible Market Viability",
   description:
     "A strategic assessment of Audible's financial viability, competitive advantages, and outlook in a changing media market.",
+  alternates: { canonical: "/projects/audible" },
+  openGraph: {
+    title: "Audible: Financial Viability & Future Growth",
+    description:
+      "A strategic assessment of Audible's financial viability, competitive advantages, and outlook in a changing media market.",
+    images: ["/projects/audible/cover.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audible: Financial Viability & Future Growth",
+    description:
+      "A strategic assessment of Audible's financial viability, competitive advantages, and outlook in a changing media market.",
+    images: ["/projects/audible/cover.jpg"],
+  },
 };
 
 export default function AudibleProject() {

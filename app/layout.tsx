@@ -2,33 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chengtian-wang-portfolio.saizhui.chatgpt.site"),
+  metadataBase: new URL("https://www.chengtianwang.com"),
   title: {
-    default: "Chengtian Wang — Platform Growth, Strategy & Operations",
+    default: "Chengtian Wang — Growth, Operations & Partnerships",
     template: "%s | Chengtian Wang",
   },
   description:
-    "Creator partnerships, platform growth, campaign operations, data-informed strategy, and workflow automation.",
+    "Growth strategy, business development, partnership operations, and workflow automation.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
-    title: "Chengtian Wang — Platform Growth, Strategy & Operations",
+    title: "Chengtian Wang — Growth, Operations & Partnerships",
     description:
-      "Creative instinct and clear execution across digital platforms and creator ecosystems.",
+      "Strategic thinking and practical execution across growth, operations, and partnerships.",
     images: [
       {
-        url: "/og-platform.png",
-        width: 1619,
-        height: 971,
-        alt: "Chengtian Wang — Platform Growth, Strategy and Operations",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Chengtian Wang — Growth, Operations and Partnerships",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chengtian Wang — Platform Growth, Strategy & Operations",
+    title: "Chengtian Wang — Growth, Operations & Partnerships",
     description:
-      "Creative instinct and clear execution across digital platforms and creator ecosystems.",
-    images: ["/og-platform.png"],
+      "Strategic thinking and practical execution across growth, operations, and partnerships.",
+    images: ["/og.png"],
   },
 };
 

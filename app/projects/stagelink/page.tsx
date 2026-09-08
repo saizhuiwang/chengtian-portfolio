@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "StageLink — Chengtian Wang",
+  title: "StageLink",
   description:
     "A data-driven artist and venue matching platform developed for NYU's Entrepreneurship for the Music Industry course.",
+  alternates: { canonical: "/projects/stagelink" },
+  openGraph: {
+    title: "StageLink: Two-Sided Matching Platform",
+    description:
+      "A data-driven marketplace concept matching artists and venues through audience fit, geography, and performance signals.",
+    images: ["/projects/stagelink/cover.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StageLink: Two-Sided Matching Platform",
+    description:
+      "A data-driven marketplace concept matching artists and venues through audience fit, geography, and performance signals.",
+    images: ["/projects/stagelink/cover.jpg"],
+  },
 };
 
 export default function StageLinkProject() {

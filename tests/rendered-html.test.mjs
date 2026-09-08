@@ -35,12 +35,22 @@ async function renderHtml(pathname) {
 test("server-renders the finished portfolio homepage", async () => {
   const html = await renderHtml("/");
 
-  assert.match(html, /<title>Chengtian Wang — Platform Growth/);
+  assert.match(
+    html,
+    /<title>Chengtian Wang — Growth, Operations &amp; Partnerships<\/title>/,
+  );
   assert.match(html, /href="#projects">Projects<\/a>/);
   assert.match(html, /href="#contact">Let’s talk/);
+  assert.match(html, /aria-controls="mobile-navigation"/);
   assert.match(html, /MUSIC BUSINESS/);
   assert.match(html, /DIGITAL MEDIA/);
-  assert.match(html, /Event Planning/);
+  assert.match(html, /Project &amp; Event Management/);
+  assert.match(
+    html,
+    /https:\/\/saizhuiwang\.github\.io\/chengtian-resume\/chengtian-wang-resume\.pdf/,
+  );
+  assert.match(html, /https:\/\/www\.chengtianwang\.com\/og\.png/);
+  assert.doesNotMatch(html, /chatgpt\.site|og-platform\.png/);
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
 
@@ -52,10 +62,27 @@ test("keeps project metadata accurate and consistent", async () => {
   ]);
 
   assert.match(rednote, /<dt>ROLE<\/dt>/);
+  assert.match(
+    rednote,
+    /<title>RedNote Creator Growth Assignment \| Chengtian Wang<\/title>/,
+  );
+  assert.match(
+    rednote,
+    /https:\/\/www\.chengtianwang\.com\/projects\/rednote\/slide-01\.jpg/,
+  );
+  assert.doesNotMatch(rednote, /Chengtian Wang \| Chengtian Wang/);
   assert.match(rednote, /<dt>DELIVERABLE<\/dt>/);
   assert.match(rednote, /Creator Growth Figma Project/);
 
   assert.match(umg, /<dt>TEAM<\/dt>/);
+  assert.match(
+    umg,
+    /<title>Production and A&amp;R \| Chengtian Wang<\/title>/,
+  );
+  assert.match(
+    umg,
+    /https:\/\/www\.chengtianwang\.com\/projects\/umg\/cover\.jpg/,
+  );
   assert.match(umg, /The Dust Busters/);
   assert.match(umg, /<dt>DELIVERABLE<\/dt>/);
   assert.match(
@@ -80,7 +107,7 @@ test("defers noncritical project media", async () => {
 
   assert.match(
     home,
-    /id="recent-project-rail"[\s\S]*?<img[^>]+loading="lazy"[^>]+decoding="async"/,
+    /id="recent-project-rail"[\s\S]*?<img[^>]+loading="lazy"/,
   );
   assert.match(apple, /<iframe[^>]+loading="lazy"/);
   assert.match(audible, /<iframe[^>]+loading="lazy"/);

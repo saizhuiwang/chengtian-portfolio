@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "RedNote Creator Growth Assignment — Chengtian Wang",
+  title: "RedNote Creator Growth Assignment",
   description:
     "A community-first strategy for bringing 100 local creators to a new platform, followed by the original assignment PDF.",
+  alternates: { canonical: "/projects/rednote" },
+  openGraph: {
+    title: "Bringing 100 Local Creators to a New Platform",
+    description:
+      "A community-first strategy for bringing 100 local creators to a new platform.",
+    images: ["/projects/rednote/slide-01.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bringing 100 Local Creators to a New Platform",
+    description:
+      "A community-first strategy for bringing 100 local creators to a new platform.",
+    images: ["/projects/rednote/slide-01.jpg"],
+  },
 };
 
 const assignmentPages = Array.from(
@@ -82,13 +97,14 @@ export default function RedNoteProject() {
         >
           {assignmentPages.map((page, index) => (
             <figure className="case-pdf-page" key={page}>
-              <img
+              <Image
                 src={page}
                 alt={`RedNote assignment slide ${index + 1} of 8`}
-                width="1600"
-                height="900"
+                width={1600}
+                height={900}
+                sizes="(max-width: 700px) 90vw, 80vw"
                 loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
+                unoptimized
               />
               <figcaption>
                 {String(index + 1).padStart(2, "0")} / 08

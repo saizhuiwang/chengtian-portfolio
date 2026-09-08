@@ -79,6 +79,10 @@ a {
   gap: 8px;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .nav-links a,
 .header-cta {
   border-radius: 999px;
@@ -674,25 +678,27 @@ a {
 }
 
 .recent-projects-side {
-  align-items: flex-start;
-  align-self: start;
+  align-items: flex-end;
+  align-self: end;
+  border-top: 1px solid var(--ink);
   display: flex;
   gap: clamp(22px, 3vw, 38px);
-  height: clamp(6.02rem, 9.288vw, 9.976rem);
+  height: auto;
   justify-content: space-between;
-  margin-top: calc(0.65rem * 1.5 + 32px);
+  margin-top: 0;
+  padding-top: 18px;
 }
 
 .recent-projects-side > p {
   flex: 1;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: clamp(0.9rem, 1vw, 0.98rem);
+  line-height: 1.5;
   margin: 0;
-  max-width: 360px;
+  max-width: 350px;
 }
 
 .recent-project-controls {
-  align-self: flex-end;
+  align-self: auto;
   flex: 0 0 auto;
   display: flex;
   gap: 8px;
@@ -707,10 +713,10 @@ a {
   cursor: pointer;
   display: flex;
   font-size: 1rem;
-  height: 46px;
+  height: 42px;
   justify-content: center;
   transition: background 180ms ease, color 180ms ease;
-  width: 46px;
+  width: 42px;
 }
 
 .recent-project-controls button:hover {
@@ -892,7 +898,7 @@ a {
 .project-section {
   background: var(--blue);
   color: #f8f5ed;
-  padding: clamp(86px, 11vw, 156px) clamp(22px, 7vw, 108px);
+  padding: clamp(64px, 7vw, 96px) clamp(22px, 7vw, 108px);
   position: relative;
   overflow: hidden;
 }
@@ -934,9 +940,9 @@ a {
 .project-grid {
   align-items: start;
   display: grid;
-  gap: 9vw;
+  gap: 6vw;
   grid-template-columns: 1.2fr 0.8fr;
-  padding-top: 55px;
+  padding-top: 36px;
   position: relative;
   z-index: 1;
 }
@@ -947,12 +953,12 @@ a {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  margin: 0 0 20px;
+  margin: 0 0 14px;
 }
 
 .project-grid h2 {
   font-family: var(--display);
-  font-size: clamp(4rem, 8vw, 9rem);
+  font-size: clamp(4.2rem, 7.4vw, 8.4rem);
   font-weight: 500;
   letter-spacing: -0.07em;
   line-height: 0.72;
@@ -966,10 +972,10 @@ a {
 
 .project-copy > p:not(.project-location, .project-detail) {
   font-family: var(--display);
-  font-size: clamp(1.5rem, 2.2vw, 2.15rem);
+  font-size: clamp(1.3rem, 1.75vw, 1.8rem);
   letter-spacing: -0.025em;
   line-height: 1.14;
-  margin: 38px 0;
+  margin: 24px 0;
 }
 
 .project-location,
@@ -989,7 +995,7 @@ a {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 25px 0;
+  padding: 18px 0;
 }
 
 .project-stats > div + div {
@@ -1000,7 +1006,7 @@ a {
 .project-stats strong {
   color: var(--acid);
   font-family: var(--display);
-  font-size: 3.4rem;
+  font-size: 2.7rem;
   letter-spacing: -0.05em;
   line-height: 1;
 }
@@ -1012,12 +1018,12 @@ a {
 }
 
 .project-detail {
-  margin: 26px 0 0;
+  margin: 18px 0 0;
 }
 
 .project-access {
   border-left: 2px solid var(--acid);
-  margin-top: 24px;
+  margin-top: 18px;
   padding-left: 16px;
 }
 
@@ -1047,8 +1053,8 @@ a {
   font-weight: 800;
   justify-content: space-between;
   letter-spacing: 0.06em;
-  margin-top: 32px;
-  padding: 18px 0;
+  margin-top: 24px;
+  padding: 14px 0;
   text-transform: uppercase;
   transition: color 180ms ease, padding 180ms ease;
 }
@@ -1830,6 +1836,13 @@ a {
   margin-top: 4px;
 }
 
+.education-card > div .education-coursework {
+  color: #5a5850;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
 .education-card > div .education-honor {
   color: var(--blue);
   font-family: var(--mono);
@@ -2122,7 +2135,7 @@ a {
 
   .project-grid {
     align-items: start;
-    gap: 72px;
+    gap: 44px;
     grid-template-columns: 1fr;
   }
 
@@ -2221,7 +2234,8 @@ a {
 
 @media (max-width: 700px) {
   .site-header {
-    grid-template-columns: 1fr auto;
+    column-gap: 8px;
+    grid-template-columns: 1fr auto auto;
     height: 68px;
   }
 
@@ -2229,9 +2243,69 @@ a {
     display: none;
   }
 
+  .mobile-nav {
+    display: block;
+    position: relative;
+  }
+
+  .mobile-nav > button {
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--ink);
+    cursor: pointer;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    min-height: 44px;
+    padding: 9px 12px;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav > button:focus-visible,
+  .mobile-nav nav a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .mobile-nav nav {
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    box-shadow: 7px 7px 0 var(--blue);
+    min-width: 176px;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+  }
+
+  .mobile-nav nav a {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    font-size: 0.78rem;
+    font-weight: 750;
+    justify-content: space-between;
+    letter-spacing: 0.07em;
+    min-height: 46px;
+    padding: 10px 12px;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav nav a:last-child {
+    border-bottom: 0;
+  }
+
   .header-cta {
     font-size: 0.62rem;
+    min-height: 44px;
     padding: 10px 13px;
+  }
+
+  .recent-project-controls button {
+    height: 44px;
+    width: 44px;
   }
 
   .hero {
@@ -2334,7 +2408,7 @@ a {
   }
 
   .project-grid h2 {
-    font-size: 4.1rem;
+    font-size: 4.2rem;
   }
 
   .recent-projects {

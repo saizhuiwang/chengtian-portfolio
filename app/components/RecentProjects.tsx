@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ProjectCarouselControls from "./ProjectCarouselControls";
 
 const projects = [
@@ -18,12 +19,12 @@ const projects = [
     ariaLabel: "View the NYU and Universal Music Group Production and A&R project",
     imageSrc: "/projects/umg/cover.jpg",
     imageAlt: "Cover of the Production and A&R Nashville presentation",
-    kicker: "PRODUCTION · A&R · NASHVILLE",
+    kicker: "CONTENT EVALUATION · TEAM DELIVERY",
     dateTime: "2026-01",
     dateLabel: "JAN 2026",
-    title: "A&R & Production Intensive",
+    title: "Content Evaluation & Production Intensive",
     description:
-      "An immersive study of how records move from artist discovery through studio production and final mastering.",
+      "A 200+ hour cross-functional intensive spanning candidate evaluation, creative development, production, and final delivery.",
   },
   {
     href: "/projects/stagelink",
@@ -31,17 +32,17 @@ const projects = [
     imageSrc: "/projects/stagelink/cover.jpg",
     imageAlt:
       "Cover of the StageLink artist and venue matching platform presentation",
-    kicker: "VENTURE STRATEGY · LIVE MUSIC",
+    kicker: "PLATFORM DESIGN · MATCHING SYSTEMS",
     dateTime: "2025-12",
     dateLabel: "DEC 2025",
-    title: "StageLink: Artist × Venue Matching Platform",
+    title: "StageLink: Two-Sided Matching Platform",
     description:
-      "A data-driven platform designed to match independent artists and venues using audience fit, geography, and performance signals.",
+      "A data-driven marketplace concept matching supply and demand through audience fit, geography, and performance signals.",
   },
   {
     href: "/projects/apple-pricing",
     ariaLabel: "View the Apple psychology of pricing project",
-    imageSrc: "/projects/apple-pricing/cover.jpg?v=20260726",
+    imageSrc: "/projects/apple-pricing/cover.jpg",
     imageAlt: "Cover of The Psychology of Pricing: Apple presentation",
     kicker: "CONSUMER PSYCHOLOGY · PRICING STRATEGY",
     dateTime: "2025-11",
@@ -97,8 +98,8 @@ export default function RecentProjects() {
         </div>
         <div className="recent-projects-side">
           <p>
-            A selection of recent strategy and creative projects. Swipe through
-            the previews, then open a card for the full story.
+            Selected strategy and applied projects. Open a card for the full
+            case study.
           </p>
           <ProjectCarouselControls railId={railId} />
         </div>
@@ -118,11 +119,14 @@ export default function RecentProjects() {
             key={project.href}
           >
             <div className="recent-project-preview">
-              <img
+              <Image
                 src={project.imageSrc}
                 alt={project.imageAlt}
+                width={1600}
+                height={900}
+                sizes="(max-width: 700px) 88vw, (max-width: 960px) 76vw, 720px"
                 loading="lazy"
-                decoding="async"
+                unoptimized
               />
             </div>
             <div className="recent-project-card-body">
