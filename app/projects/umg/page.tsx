@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Production and A&R — Chengtian Wang",
+  title: "Production and A&R",
   description:
     "A Nashville presentation exploring the production process and the role of A&R through the work of Gable Bradley.",
+  alternates: { canonical: "/projects/umg" },
+  openGraph: {
+    title: "Production & A&R Intensive",
+    description:
+      "A Nashville presentation exploring the production process and the role of A&R through the work of Gable Bradley.",
+    images: ["/projects/umg/cover.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Production & A&R Intensive",
+    description:
+      "A Nashville presentation exploring the production process and the role of A&R through the work of Gable Bradley.",
+    images: ["/projects/umg/cover.jpg"],
+  },
 };
 
 export default function UmgProject() {

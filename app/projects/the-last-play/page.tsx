@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Last Play Documentary Pitch — Chengtian Wang",
+  title: "The Last Play Documentary Pitch",
   description:
     "A sports documentary development project spanning story treatment, production, marketing, distribution, financing, and budget strategy.",
+  alternates: { canonical: "/projects/the-last-play" },
+  openGraph: {
+    title: "Greg Brooks Jr.: The Last Play",
+    description:
+      "A sports documentary development project spanning story treatment, production, marketing, distribution, financing, and budget strategy.",
+    images: ["/projects/the-last-play/cover.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Greg Brooks Jr.: The Last Play",
+    description:
+      "A sports documentary development project spanning story treatment, production, marketing, distribution, financing, and budget strategy.",
+    images: ["/projects/the-last-play/cover.jpg"],
+  },
 };
 
 export default function TheLastPlayProject() {

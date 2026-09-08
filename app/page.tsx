@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import type { CSSProperties } from "react";
+import MobileNav from "./components/MobileNav";
 import RecentProjects from "./components/RecentProjects";
 
 export const metadata: Metadata = {
-  title: "Chengtian Wang — Platform Growth, Strategy & Operations",
+  title: {
+    absolute: "Chengtian Wang — Growth, Operations & Partnerships",
+  },
   description:
-    "Portfolio of Chengtian Wang, working across creator partnerships, platform growth, campaign operations, data-informed strategy, and workflow automation.",
+    "Portfolio of Chengtian Wang, working across growth strategy, business development, partnership operations, and workflow automation.",
 };
 
 const experience = [
@@ -16,26 +20,26 @@ const experience = [
     period: "Jan — Apr 2026",
     location: "New York, NY",
     intro:
-      "Built the operating rhythm behind artist booking and event delivery.",
+      "Built an AI-assisted business-development workflow connecting research, outreach, and project delivery.",
     points: [
-      "Automated an Apollo, Excel, and Power Automate outreach workflow reaching 400+ prospects each month.",
-      "Supported deal outlines, booking terms, contract approvals, and pipeline tracking.",
-      "Coordinated timelines, technical riders, and deliverables across 20+ events.",
+      "Used Codex, Apollo, Excel, and Power Automate to qualify and reach 400+ prospects each month.",
+      "Prepared partnership proposals, deal terms, and approval materials to support negotiations.",
+      "Managed milestones, requirements, and deliverables across 20+ concurrent projects.",
     ],
     tag: "OPERATIONS",
   },
   {
     number: "02",
     company: "Saizhui Culture Co., Ltd.",
-    role: "Founder",
+    role: "Founder & Marketing Operations Lead",
     period: "May — Dec 2025",
     location: "Guangdong, China",
     intro:
-      "Created an artist services company from insight to execution.",
+      "Turned customer insight into a focused growth and partnership operation.",
     points: [
-      "Built a planning tool informed by 100+ industry interviews and platform data.",
-      "Facilitated 120+ brand partnerships and sponsorship placements for artists.",
-      "Grew a representative client’s audience from under 5K to 50K+ in three months.",
+      "Built creator positioning, content, and growth plans using insights from 100+ interviews and platform data.",
+      "Managed 120+ brand partnerships across outreach, timelines, content, and delivery.",
+      "Grew a key account from under 5K to 50K followers in three months through content optimization.",
     ],
     tag: "FOUNDER",
   },
@@ -46,69 +50,70 @@ const experience = [
     period: "Jan — May 2025",
     location: "New York, NY",
     intro:
-      "Turned artist stories into organized, measurable publicity campaigns.",
+      "Connected communications planning with organized, measurable execution.",
     points: [
-      "Tracked 15+ publicity offers and maintained campaign calendars and press strategy.",
-      "Prepared releases, one-sheets, pitch decks, and media and social clippings.",
-      "Monitored 200+ outlets daily using Muck Rack, RocketReach, and Photoshop.",
+      "Coordinated 15+ media opportunities across outreach, client calendars, and campaign schedules.",
+      "Created releases, one-sheets, and pitch decks to support external communications.",
+      "Monitored 200+ media and social channels daily to inform publicity planning.",
     ],
     tag: "PUBLICITY",
   },
   {
     number: "04",
     company: "iQIYI",
-    role: "Marketing & Execution Intern",
+    role: "Global Marketing & Project Operations Intern",
     period: "Nov 2024 — Feb 2025",
     location: "New York, NY",
     intro:
-      "Connected campaign strategy with live execution for a global entertainment brand.",
+      "Coordinated global campaign strategy across markets, teams, and channels.",
     points: [
-      "Drove engagement beyond 2M streams for iQIYI’s The Rap of China 2025 Competition.",
-      "Ran on-site operations for two large live events, from rundowns to rapid issue-solving.",
-      "Partnered with 60+ artists and influencers to expand audience engagement.",
+      "Supported an integrated U.S. campaign generating approximately 200K views and impressions.",
+      "Coordinated China-based and North American teams across content, production, and on-site operations.",
+      "Managed outreach, publishing timelines, and deliverables with 60+ creators and local partners.",
     ],
     tag: "MARKETING",
   },
   {
     number: "05",
-    company: "China Film Symphony Orchestra",
-    role: "Management Assistant",
+    company: "China Broadcasting Performing-Arts Troupe",
+    role: "Management Assistant · China Film Symphony Orchestra",
     period: "May — Jul 2024",
     location: "Beijing, China",
     intro:
-      "Helped move a 90+ member orchestra from rehearsal room to major stages.",
+      "Delivered complex, high-visibility projects with a 90+ person team.",
     points: [
-      "Coordinated 10+ performances at venues including the National Grand Theater.",
-      "Managed personnel, logistics, stage setup, audio systems, and master output.",
-      "Produced 20+ promotional assets reaching thousands of attendees.",
+      "Supported 10+ large-scale projects at major venues and universities across Beijing.",
+      "Coordinated personnel schedules, on-site operations, logistics, and technical requirements.",
+      "Worked across internal teams and external venues to keep delivery on track.",
     ],
     tag: "LIVE",
   },
 ];
 
 const expertise = [
-  "Creator Partnerships",
-  "Platform Growth",
-  "Campaign Strategy",
-  "Audience Development",
-  "Event Planning",
-  "Operations & Automation",
-  "Data-Informed Planning",
+  "Growth Strategy",
+  "Business Development",
+  "Partnership Operations",
+  "Project & Event Management",
+  "AI & Automation",
+  "Market Research & Analytics",
+  "Content & Brief Writing",
+  "Web Design & Deployment",
 ];
 
 const tools = [
   "Power Automate",
-  "Microsoft Office / Google Workspace",
+  "Microsoft Excel",
+  "PowerPoint",
+  "Google Workspace",
   "Apollo",
   "FastMoss",
-  "Chartmetric",
   "Muck Rack",
+  "Codex",
+  "Vercel",
   "Figma",
-  "Adobe Creative Cloud",
-  "SoundExchange",
-  "MLC",
-  "ASCAP / BMI",
-  "Logic Pro",
+  "Adobe Photoshop",
+  "CapCut",
 ];
 
 function AnimatedLetters({
@@ -149,6 +154,7 @@ export default function Home() {
           <a href="#projects">Projects</a>
           <a href="#about">About</a>
         </nav>
+        <MobileNav />
         <a className="header-cta" href="#contact">
           Let’s talk <span aria-hidden="true">↗</span>
         </a>
@@ -167,7 +173,7 @@ export default function Home() {
           <div
             className="hero-focus"
             role="img"
-            aria-label="Communication, events, marketing, creator ecosystems, and data systems"
+            aria-label="Communication, events, marketing, music business, and digital media"
           >
             <div className="focus-system" aria-hidden="true">
               <div className="focus-orbit-stage">
@@ -207,7 +213,7 @@ export default function Home() {
           <p className="hero-summary reveal">
             <span className="summary-label">WHAT I BRING</span>
             <span className="summary-copy">
-              I turn <strong>audience insight and creative ideas</strong> into
+              I turn <strong>market insight and ambitious ideas</strong> into
               measurable growth through clear strategy, connected operations,
               and practical systems.
             </span>
@@ -216,8 +222,13 @@ export default function Home() {
             <a className="button button-dark" href="#work">
               Explore my work <span aria-hidden="true">↓</span>
             </a>
-            <a className="button button-ghost" href="/chengtian-wang-resume.pdf" download>
-              Download résumé <span aria-hidden="true">↗</span>
+            <a
+              className="button button-ghost"
+              href="https://saizhuiwang.github.io/chengtian-resume/chengtian-wang-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View résumé <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -232,16 +243,16 @@ export default function Home() {
             <span>brand partnerships facilitated</span>
           </div>
           <div>
-            <strong>2M+</strong>
-            <span>campaign streams generated</span>
+            <strong>20+</strong>
+            <span>projects delivered in parallel</span>
           </div>
         </div>
       </section>
 
       <div className="ticker" aria-hidden="true">
         <div className="ticker-track">
-          <span>CREATOR STRATEGY ✦ PLATFORM GROWTH ✦ CAMPAIGN OPERATIONS ✦ DATA AUTOMATION ✦ </span>
-          <span>CREATOR STRATEGY ✦ PLATFORM GROWTH ✦ CAMPAIGN OPERATIONS ✦ DATA AUTOMATION ✦ </span>
+          <span>GROWTH STRATEGY ✦ BUSINESS DEVELOPMENT ✦ PARTNERSHIP OPERATIONS ✦ WORKFLOW AUTOMATION ✦ </span>
+          <span>GROWTH STRATEGY ✦ BUSINESS DEVELOPMENT ✦ PARTNERSHIP OPERATIONS ✦ WORKFLOW AUTOMATION ✦ </span>
         </div>
       </div>
 
@@ -249,13 +260,13 @@ export default function Home() {
         <div className="section-heading">
           <span className="eyebrow">01 / SELECTED EXPERIENCE</span>
           <h2 id="work-title">
-            Building momentum
+            Making complex work
             <br />
-            <em>across platforms.</em>
+            <em>move clearly.</em>
           </h2>
           <p>
-            From audience data and workflow automation to creator partnerships
-            and campaign execution — work designed to turn insight into action.
+            From AI-assisted pipeline automation and market research to campaign
+            and project delivery — work designed to turn insight into action.
           </p>
         </div>
 
@@ -298,7 +309,7 @@ export default function Home() {
           <div>
             <p className="project-collab">NYU × UNIVERSAL MUSIC GROUP</p>
             <h2 id="project-title">
-              A&R <span>&</span>
+              A&amp;R <span>&amp;</span>
               <br />
               Production
               <br />
@@ -308,29 +319,31 @@ export default function Home() {
           <div className="project-copy">
             <p className="project-location">Nashville, TN · January 2026</p>
             <p>
-              An immersive look at how records are discovered, shaped, and
-              finished — from the first A&R conversation to the final master.
+              A 200+ hour A&amp;R and production intensive developed in
+              partnership with Universal Music Group, combining talent
+              evaluation, artist development, and hands-on studio production.
             </p>
             <div className="project-stats">
               <div>
                 <strong>30+</strong>
-                <span>artists evaluated</span>
+                <span>creator candidates evaluated</span>
               </div>
               <div>
                 <strong>200+</strong>
-                <span>studio hours</span>
+                <span>intensive project hours</span>
               </div>
             </div>
             <p className="project-detail">
-              Worked in recording sessions with Grammy-winning producers across
-              pre-production, tracking, overdubs, mixing, and mastering.
+              Evaluated 30+ emerging artists based on content quality, audience
+              fit, and market potential, then supported recording sessions
+              across pre-production, tracking, overdubs, mixing, and mastering.
             </p>
             <div className="project-access">
               <span>INDUSTRY ACCESS</span>
               <p>
-                Visits and small-group conversations with leaders at Universal
-                Music Group, Live Nation, The MLC, and across Nashville’s
-                publishing, production, and catalog ecosystem.
+                Participated in small-group conversations with leaders at
+                Universal Music Group, Live Nation, The MLC, and across
+                Nashville’s publishing, production, and catalog ecosystem.
               </p>
             </div>
             <a
@@ -353,26 +366,27 @@ export default function Home() {
           <div className="about-visual-column">
             <div className="about-intro">
               <h2 id="about-title">
-                Creative instinct.
+                Strategic thinking.
                 <br />
-                <em>Clear execution.</em>
+                <em>Practical execution.</em>
               </h2>
             </div>
 
             <figure className="profile-portrait">
               <div className="profile-portrait-frame">
-                <img
+                <Image
                   src="/chengtian-wang-portrait.jpeg"
                   alt="Portrait of Chengtian Wang"
-                  width="886"
-                  height="886"
+                  width={886}
+                  height={886}
+                  sizes="(max-width: 960px) min(100vw - 44px, 380px), 25vw"
                   loading="lazy"
-                  decoding="async"
+                  unoptimized
                 />
               </div>
               <figcaption>
                 <span>CHENGTIAN WANG</span>
-                <span>GROWTH · STRATEGY · EXECUTION</span>
+                <span>GROWTH · OPERATIONS · PARTNERSHIPS</span>
               </figcaption>
             </figure>
           </div>
@@ -381,15 +395,16 @@ export default function Home() {
             <div className="about-lead-wrap">
               <p className="about-lead">
                 <strong>
-                  I turn audience and market insight into growth strategies,
-                  partnerships, and operating plans for digital platforms and
-                  creator-led businesses.
+                  I work at the intersection of growth, marketing, operations,
+                  and the creative industries — turning ideas into campaigns,
+                  partnerships, experiences, and repeatable systems.
                 </strong>
                 <span>
-                  Across creator acquisition, glocalization, campaign
-                  operations, and workflow automation, I have built prospecting
-                  systems, developed data-informed growth plans, and coordinated
-                  execution across artists, brands, and live teams.
+                  I am especially interested in using AI, automation, and
+                  smarter workflows to help teams research faster, coordinate
+                  more clearly, and make better decisions. With experience
+                  across the U.S. and China, I bring a cross-cultural perspective
+                  and a practical, systems-minded approach to execution.
                 </span>
               </p>
             </div>
@@ -400,9 +415,14 @@ export default function Home() {
                 <div>
                   <strong>New York University</strong>
                   <span>
-                    Bachelor’s Degree · Music Business &amp; Digital Media
+                    Music Business · Media, Culture &amp; Communication
                   </span>
                   <span>GPA 3.78 / 4.0 · May 2026</span>
+                  <span className="education-coursework">
+                    Selected coursework: Marketing · Applied Data Analysis ·
+                    Business Statistics · International Business Marketplace ·
+                    Management and Organizations
+                  </span>
                   <span className="education-honor">
                     University Honors Scholar · Founders Day Award
                   </span>
@@ -436,8 +456,8 @@ export default function Home() {
             <strong>Mandarin · English · French</strong>
           </div>
           <div>
-            <span>MUSIC</span>
-            <strong>Cello · Piano · Composition · Recording</strong>
+            <span>MARKETING &amp; OPERATIONS</span>
+            <strong>Campaigns · Events · Project Delivery</strong>
           </div>
         </div>
       </section>

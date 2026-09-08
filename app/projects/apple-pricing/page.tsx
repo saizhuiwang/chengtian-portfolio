@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Apple Pricing Psychology — Chengtian Wang",
+  title: "Apple Pricing Psychology",
   description:
     "A consumer-behavior analysis of the psychological principles behind Apple's premium pricing strategy.",
+  alternates: { canonical: "/projects/apple-pricing" },
+  openGraph: {
+    title: "Apple: The Psychology of Pricing",
+    description:
+      "A consumer-behavior analysis of the psychological principles behind Apple's premium pricing strategy.",
+    images: ["/projects/apple-pricing/cover.jpg?v=20260726"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apple: The Psychology of Pricing",
+    description:
+      "A consumer-behavior analysis of the psychological principles behind Apple's premium pricing strategy.",
+    images: ["/projects/apple-pricing/cover.jpg?v=20260726"],
+  },
 };
 
 export default function ApplePricingProject() {
